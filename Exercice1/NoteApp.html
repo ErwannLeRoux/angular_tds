@@ -34,7 +34,7 @@
         <div class="form-group">
             <label for="note">Note:</label>
             <textarea class="form-control" rows="4"  id="note" maxlength="100"  data-ng-model="ctrlNote.message"></textarea>
-            <button data-ng-model="ctrlNote.save()" id="afficher" onclick="{{ctrlNote.save(ctrlNote.message)}}" type="button" class="btn btn-primary">Enregistrer</button>
+            <button data-ng-model="ctrlNote.save()" id="afficher" onclick="ctrlNote.save()" type="button" class="btn btn-primary">Enregistrer</button>
             <button id="effacer" type="button" class="btn btn-primary">Effacer</button>
         </div>
         <div data-ng-model="ctrlNote.count()" id = "div-caracteres-restants">

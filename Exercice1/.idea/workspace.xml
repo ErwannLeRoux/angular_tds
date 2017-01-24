@@ -26,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NoteApp.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NoteApp.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NoteApp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="36" column="107" lean-forward="false" selection-start-line="36" selection-start-column="107" selection-end-line="36" selection-end-column="107" />
+            <state relative-caret-position="185">
+              <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoteController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NoteController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NoteController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+            <state relative-caret-position="204">
+              <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
               <folding>
                 <element signature="e#0#43#0" expanded="false" />
               </folding>
@@ -87,8 +87,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-40" />
-    <option name="y" value="47" />
+    <option name="x" value="-30" />
+    <option name="y" value="53" />
     <option name="width" value="1386" />
     <option name="height" value="688" />
   </component>
@@ -193,12 +193,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485261416646</updated>
-      <workItem from="1485261427819" duration="7797000" />
+      <workItem from="1485261427819" duration="8414000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7797000" />
+    <option name="totallyTimeSpent" value="8414000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -210,7 +210,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-40" y="47" width="1386" height="688" extended-state="0" />
+    <frame x="-30" y="53" width="1386" height="688" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24233577" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -252,21 +252,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NoteApp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="36" column="107" lean-forward="false" selection-start-line="36" selection-start-column="107" selection-end-line="36" selection-end-column="107" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NoteController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        <state relative-caret-position="204">
+          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding>
             <element signature="e#0#43#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NoteApp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="33" column="32" lean-forward="true" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

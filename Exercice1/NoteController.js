@@ -3,13 +3,15 @@
  */
 var myApp = angular.module('Note',['ngCookies']);
 
-myApp.controller('NoteController', ["$cookies",function() {
+myApp.controller('NoteController', ["$cookies",function($cookies) {
     var self=this;
     this.message = "";
 
-    this.save = function(message) {
+    this.save = function() {
         // Setting a cookie
-        $cookies.put('Exercice1',message);
+        var favoriteCookie = $cookies.get('monCookie');
+        // Setting a cookie
+        $cookies.put('monCookie', self.message);
     };
     this.count = function() {
         var res = (100 - self.message.length);
