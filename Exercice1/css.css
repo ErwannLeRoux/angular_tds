@@ -23,6 +23,7 @@
 }
 
 #div-note-sauvegardee {
+    display:none;
     margin-top:2%;
     background-color: lightgrey;
     border-radius:10px;
