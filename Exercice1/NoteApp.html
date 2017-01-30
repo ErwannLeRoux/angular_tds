@@ -11,38 +11,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
     <script type="text/javascript" src="NoteController.js"></script>
     <link href="css.css" rel="stylesheet">
-    <script>
-        $(document).ready(function(){
-            $("#effacer").click(function(){
-                $("#div-note-sauvegardee").hide(1000);
-            });
-        });
 
-        $(document).ready(function(){
-            $("#afficher").click(function(){
-                $("#div-note-sauvegardee").show(1000);
-            });
-        });
-    </script>
 </head>
 
 <body data-ng-controller="NoteController as ctrlNote">
-    <div id = "div-principale" class = "container">
-        <div id = "entete-div-principale">
-            <p>Ex 1 : Note Application</p>
-        </div>
-        <div class="form-group">
-            <label for="note">Note:</label>
-            <textarea class="form-control" rows="4"  id="note" maxlength="100"  data-ng-model="ctrlNote.message"></textarea>
-            <button data-ng-model="ctrlNote.save()" id="afficher" onclick="ctrlNote.save()" type="button" class="btn btn-primary">Enregistrer</button>
-            <button id="effacer" type="button" class="btn btn-primary">Effacer</button>
-        </div>
-        <div data-ng-model="ctrlNote.count()" id = "div-caracteres-restants">
-            Il reste {{ctrlNote.count()}} Caractères
-        </div>
-        <div id = "div-note-sauvegardee">
-            <p>Note sauvegardee</p>
-        </div>
-    </div>
+
+    <div id="main-panel" class="panel panel-primary">
+        <div class="panel-heading">Ex 1 : Note Application</div>
+        <div class="panel-body">
+            <b>Note :</b>
+            <textarea data-ng-change="ctrlNote.change()" class="form-control" rows="4"   maxlength="100"  data-ng-model="ctrlNote.message"></textarea>
+            <button data-ng-click="ctrlNote.save()" type="button" class="btn btn-primary">Enregistrer</button>
+            <button data-ng-click="ctrlNote.clear()" type="button" class="btn btn-primary">Effacer</button>
+            <div class="alert alert-info alert-dismissible" role="alert">
+                Nombre de caractère restants :
+                <span class="ng-binding" data-ng-bind="ctrlNote.count()">100</span>
+            </div>
+
+            <div class="alert alert-dismissible alert-info" data-ng-class="{'ng-hide':ctrlNote.status == 1, 'alert-warning': ctrlNote.count()<50 && ctrlNote.info!='Note sauvegardée','alert-danger':ctrlNote.count()<20 && ctrlNote.info!='Note sauvegardée','alert-success':ctrlNote.info=='Note sauvegardée' && status == 0}" role="alert" data-ng-show="ctrlNote.info" style="">
+            {{ctrlNote.info}}
+            <button class="close" type = "button" data-dismiss="alert" aria-label="Close" data-ng-click="ctrlNote.info=''">x</button>
+            </div>
+
+    </>
 </body>
 </html>
