@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="Service">
+<head>
+    <meta charset="UTF-8">
+    <title>Note Application</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="ServiceController.js"></script>
+    <link href="css.css" rel="stylesheet">
+    <script src="ServiceController.js"></script>
+</head>
+
+<body data-ng-controller="ServiceController as ctrlService">
+    <form id="services" class="ng-valid ng-scope ng-dirty ng-valid-parse" style="">
+        <h1>Services</h1>
+        <div class="alert alert-info">
+            <span>Choisissez les éléments à inclure</span><br/>
+            <b><ng-pluralize count="ctrlService.total()"
+                          when="{'0': 'Aucun service sélectionné',
+                       'one': '1 service séléctionné.',
+                       'other': '{} services sélectionnés.'}">
+            </ng-pluralize></b><br>
+        </div>
+        <ul>
+            <li class="ng-binding" ng-repeat="service in ctrlService.services" ng-click="ctrlService.toggleActive(service)"
+                ng-class="{active:service.active}">
+                <span id = "pull-left">
+                    {{service.name}}
+                </span>
+                <span class ="pull-right">
+                    {{service.price}} $
+                </span>
+            </li>
+        </ul>
+        <div class="total">
+            Total:
+            <span class="ng-binding pull-right" data-ng-bind="ctrlService.prix()"></span>
+        </div>
+        <div>
+            <div class = "input-group">
+                <span class="input-group-addon">
+                    <input class="ng-valid ng-dirty ng-valid-parse ng-touched" aria-label="..." ng-model="ckPromo"
+                           type="checkbox"/>
+                </span>
+                <input class="form-control ng-pristine ng-untouched ng-valid" aria-label=". . ."
+                       ng-model="codePromo" placeholder="Code Promo" type="text"/>
+            </div>
+        </div>
+        <div class = "total">
+            Total:
+            <span class="ng-binding" data-ng-bind="ctrlService.prix()"></span>
+        </div>
+    </form>
+</body>
+
+</html>
