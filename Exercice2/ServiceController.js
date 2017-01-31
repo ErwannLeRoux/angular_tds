@@ -1,10 +1,20 @@
-var myApp = angular.module('Service',['$http']);
+var myApp = angular.module('Service',[]);
 
-myApp.controller('ServiceController', [function() {
+myApp.controller('ServiceController', ["$http", function($http) {
 
     var self=this;
 
     this.message="ok";
+
+    this.promo;
+
+    console.log($http.get('promo.json'));
+
+    $http.get("promo.json")
+        .then(function(response) {
+            this.promo = response.data;
+        });
+
 
     this.services =
 
@@ -75,6 +85,18 @@ myApp.controller('ServiceController', [function() {
 
         return prix + ' $';
     }
+
+    this.checkPromo = function(value)
+    {
+        for(pro in self.promo)
+        {
+            if(pro == value)
+            {
+                return pro[value];
+            }
+        } return 0;
+    }
+
 
 
 }]);
