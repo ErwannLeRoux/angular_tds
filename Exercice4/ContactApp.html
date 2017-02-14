@@ -11,9 +11,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
         <script type="text/javascript" src="contactController.js"></script>
         <link href="css.css" rel="stylesheet">
-        <script src="../Exercice3/ListesController.js"></script>
+
     </head>
     <body data-ng-controller="contactController as ctrlContact">
+        <span>{{ctrlContact.tmpContact[0].name}}</span>
         <div class="panel panel-primary">
             <div class="panel-heading">Contacts</div>
             <div class="panel-body">
@@ -26,7 +27,7 @@
                             <td class="ng-binding">{{contact.email}}</td>
                             <td>
                                 <a class="btn btn-info btn-xs" href="" data-ng-click="toUpdate(contact)"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>&nbsp;
-                                <a class="btn btn-danger btn-xs" href="" data-ng-click="delete(contact)"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+                                <a class="btn btn-danger btn-xs" href="" data-ng-click="ctrlContact.delete(contact)"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
                             </td>
                         </tr>
 
@@ -43,15 +44,16 @@
             <div id ="ajout">
                 <fieldset data-ng-show="ctrlContact.edit" class="container form-group form-inline ng-hide" style="">
                     <legend class="ng-binding">Ajouter un contact</legend>
-                    <form name="frmContact" data-ng-submit="frmContact.$valid &amp;&amp; update()" novalidate="" class="ng-dirty ng-valid-parse ng-valid-required ng-submitted ng-valid ng-valid-email" style="">
-                        <input class="form-control ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" data-ng-model="tmpContact.nom" placeholder="Entrez un nom..." required="" style="" type="text">
-                        <input class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" data-ng-model="tmpContact.prenom" placeholder="Prénom..." style="" type="text">
-                        <input class="form-control ng-dirty ng-valid-required ng-touched ng-valid ng-valid-email" data-ng-model="tmpContact.email" placeholder="Adresse email..." required="" style="" type="email">
+                    <form name="frmContact" data-ng-submit="ctrlContact.update()" novalidate="" class="ng-dirty ng-valid-parse ng-valid-required ng-submitted ng-valid ng-valid-email" style="">
+                        <input class="form-control ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" data-ng-model="ctrlContact.tmpContact.name" placeholder="Entrez un nom..." required="" style="" type="text">
+                        <input class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" data-ng-model="ctrlContact.tmpContact.firstname" placeholder="Prénom..." style="" type="text">
+                        <input class="form-control ng-dirty ng-valid-required ng-touched ng-valid ng-valid-email" data-ng-model="ctrlContact.tmpContact.email" placeholder="Adresse email..." required="" style="" type="email">
                         <input value="Valider" class="btn btn-primary" type="submit">
                         <input value="Annuler" data-ng-click="ctrlContact.edit=false" class="btn btn-primary" type="button">
                     </form>
                 </fieldset>
             </div>
+
             <div class="container">
                 <data-ng-pluralize count="results.length" when="{'0': 'Aucun résultat.',
                          'one': '1 contact trouvé.',

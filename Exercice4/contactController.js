@@ -27,7 +27,7 @@ myApp.controller('contactController', [function() {
     this.contact = null;
 
     //Contact modifié par le formulaire
-    this.tmpContact = null;
+    this.tmpContact = {"name" : "", "firstname": "","email":""};
 
     this.operation = "";
 
@@ -41,21 +41,35 @@ myApp.controller('contactController', [function() {
     this.toAdd = function ()
     {
         self.edit = true;
+        self.operation = "add";
+        console.log("toAdd");
+
     }
 
     this.add = function()
     {
+        console.log("add");
+        self.contacts.push(self.tmpContact);
+        self.tmpContact = {"name" : "", "firstname": "","email":""};
 
     }
 
     this.update = function()
     {
-
+        console.log("Update");
+        if(self.operation == "add")
+        {
+            self.add();
+        }
     }
 
     this.delete = function(contact)
     {
+        console.log("On remove");
 
+        var indexItem = self.contacts.indexOf(contact);
+
+        self.contacts.splice(indexItem, 1);
     }
 
 
