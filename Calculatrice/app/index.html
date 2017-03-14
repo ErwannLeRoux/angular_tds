@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div ng-view="" class="toggle ng-scope"><div drag="{handle: '#title-calc'}" class="container ng-scope ui-draggable" id="calc" style="position: relative;">
+  <div class="panel panel-primary">
+    <div id="title-calc" class="panel-heading ui-draggable-handle">Ex 6 : Calculatrice
+      <input id="btOn" data-ng-hide="calc.gui.on" class="btn btn-info ng-hide" value="On" data-ng-click="calc.setOn()" title="Allumer la calculatrice" type="button">
+    </div>
+    <div id="calc-body" class="panel-body ng-isolate-scope" data-ng-show="calc.gui.on" data-ng-keypress="calc.keypress($event);" tabindex="0" focus-me="true">
+      <div id="sc">
+        <label id="screen" data-ng-bind="calc.gui.screen" class="ng-binding">()</label><br>
+        <label id="result" data-ng-bind="calc.gui.result" class="ng-binding"></label>
+      </div>
+      <br>
+      <!-- ngRepeat: op in calc.ops track by $index --><input title="" value="(" class="btn calcBtn btn-info" data-ng-click="onAdd({element: '('})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value=")" class="btn calcBtn btn-info" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="M" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: 'M'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><span class="space ng-scope">&nbsp;</span><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="RM" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: 'RM'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="Eteindre la calculatrice" value="Off" class="btn calcBtn btn-danger ng-scope" data-ng-click="onAdd({element: 'Off'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><br class="clear ng-scope"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="⇤" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: '⇤'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="CE" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: 'CE'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="C" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: 'C'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><span class="space ng-scope">&nbsp;</span><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="±" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: '±'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="√x" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: '√x'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><br class="clear ng-scope"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="7" class="btn calcBtn btn-default ng-scope" data-ng-click="onAdd({element: '7'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="8" class="btn calcBtn btn-default ng-scope" data-ng-click="onAdd({element: '8'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="9" class="btn calcBtn btn-default ng-scope" data-ng-click="onAdd({element: '9'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><span class="space ng-scope">&nbsp;</span><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="/" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: '/'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="%" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: '%'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><br class="clear ng-scope"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="4" class="btn calcBtn btn-default ng-scope" data-ng-click="onAdd({element: '4'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="5" class="btn calcBtn btn-default ng-scope" data-ng-click="onAdd({element: '5'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="6" class="btn calcBtn btn-default ng-scope" data-ng-click="onAdd({element: '6'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><span class="space ng-scope">&nbsp;</span><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="*" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: '*'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="1/x" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: '1/x'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><br class="clear ng-scope"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="1" class="btn calcBtn btn-default ng-scope" data-ng-click="onAdd({element: '1'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="2" class="btn calcBtn btn-default ng-scope" data-ng-click="onAdd({element: '2'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="3" class="btn calcBtn btn-default ng-scope" data-ng-click="onAdd({element: '3'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><span class="space ng-scope">&nbsp;</span><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="-" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: '-'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><br class="clear ng-scope"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="0" class="btn calcBtn colspan btn-default ng-scope" data-ng-click="onAdd({element: '0'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="." class="btn calcBtn btn-default ng-scope" data-ng-click="onAdd({element: '.'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><span class="space ng-scope">&nbsp;</span><!-- end ngRepeat: op in calc.ops track by $index --><input title="" value="+" class="btn calcBtn btn-info ng-scope" data-ng-click="onAdd({element: '+'})" type="button"><!-- end ngRepeat: op in calc.ops track by $index --><input title="Calculer ([ENTREE]) !" value="=" class="btn calcBtn rowspan btn-success ng-scope" data-ng-click="onAdd({element: '='})" type="button"><!-- end ngRepeat: op in calc.ops track by $index -->
+    </div><br><br><br>
+  </div>
+</div>
+  <script class="ng-scope">
+
+  </script></div>
+ <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>
